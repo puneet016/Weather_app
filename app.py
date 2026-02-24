@@ -201,7 +201,7 @@ def main():
         for city in samples:
             st.markdown(f'<span class="tag">{city}</span>', unsafe_allow_html=True)
 
-    city = st.text_input("Enter city name", placeholder="e.g., San Francisco")
+    city = st.text_input("Enter city name", placeholder="e.g., Bengaluru,IN")
 
     if not city:
         st.info("Type a city name to view weather details.")
@@ -210,7 +210,7 @@ def main():
     try:
         location = geocode_city(city)
         if not location:
-            st.warning("City not found. Try a different name with country code, e.g., Paris,FR")
+            st.warning("City not found. Try a different name with country code, e.g., Hubli,IN.")
             return
 
         lat, lon = location["latitude"], location["longitude"]
